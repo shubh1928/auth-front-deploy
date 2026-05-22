@@ -33,6 +33,13 @@ export const getCurrentUser = async (emailId:string | undefined) => {
 
 //refresh token function
 export const refreshToken = async () => {
-    const response = await apiClient.post<LoginResponseData>("/auth/refresh");
-    return response.data;
-}
+   const response = await apiClient.post(
+      "/api/v1/auth/refresh",
+      {},
+      {
+         withCredentials: true,
+      }
+   );
+
+   return response.data;
+};
