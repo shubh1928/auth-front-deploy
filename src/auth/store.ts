@@ -64,7 +64,7 @@ const useAuth = create<AuthState>()(
         return loginResponseData;
 
         } 
-        catch (error) 
+        catch (error:any) 
         {
             console.error("Login failed: ", error);
             throw error;
@@ -74,7 +74,7 @@ const useAuth = create<AuthState>()(
         }
 
     },
-    logout: async (silent = false) => {
+    logout: async () => {
 
         try {
             // if(!silent) {

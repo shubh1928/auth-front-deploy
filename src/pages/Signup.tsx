@@ -11,7 +11,6 @@ import {
   CheckCircle2Icon,
 } from "lucide-react";
 import { toast } from "react-hot-toast";
-import type RegisertData from "@/models/RegisterData";
 import { registerUser } from "@/services/AuthService";
 import { NavLink, useNavigate } from "react-router";
 import { Spinner } from "@/components/ui/spinner";

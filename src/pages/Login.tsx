@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import type LoginData from "@/models/LoginData";
 import toast from "react-hot-toast";
-import { loginUser } from "@/services/AuthService";
 import { useNavigate } from "react-router";
 import { Alert, AlertTitle } from "@/components/ui/alert";
 import { Spinner } from "@/components/ui/spinner";
@@ -32,11 +31,12 @@ const login = useAuth((state) => state.login);
 
 const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
+
     setLoginData((prevData) => ({
       ...prevData,
-      [event.target.name]: event.target.value,
+      [name]: value,
     }));
-  };
+};
 
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
