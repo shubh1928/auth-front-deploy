@@ -11,51 +11,52 @@ import {
   ScanFace,
   CheckCircle2,
   Zap,
+  User,
 } from "lucide-react";
 
 
 function HomeComponent() {
-   const features = [
-    {
-      icon: <Shield className="h-8 w-8" />,
-      title: "Military Grade Security",
-      description:
-        "Advanced encrypted authentication infrastructure with multi-layer protection.",
-    },
-    {
-      icon: <Fingerprint className="h-8 w-8" />,
-      title: "Biometric Access",
-      description:
-        "Enable futuristic fingerprint and face recognition authentication systems.",
-    },
-    {
-      icon: <Cpu className="h-8 w-8" />,
-      title: "AI Protection",
-      description:
-        "AI-powered monitoring detects suspicious activities in real time.",
-    },
-    {
-      icon: <Globe className="h-8 w-8" />,
-      title: "Global Scale",
-      description:
-        "Built for startups and enterprises handling millions of users worldwide.",
-    },
-  ];
+    const features = [
+      {
+        icon: <Shield className="h-8 w-8" />,
+        title: "JWT Authentication",
+        description:
+          "Secure access and refresh token based authentication using Spring Security and JWT.",
+      },
+      {
+        icon: <LockKeyhole className="h-8 w-8" />,
+        title: "OAuth2 Login",
+        description:
+          "Login securely using Google and GitHub OAuth2 authentication providers.",
+      },
+      {
+        icon: <User className="h-8 w-8" />,
+        title: "Role Based Access",
+        description:
+          "Different dashboard access and UI rendering based on user roles and permissions.",
+      },
+      {
+        icon: <Globe className="h-8 w-8" />,
+        title: "Full Stack Deployment",
+        description:
+          "Frontend deployed on Vercel and backend hosted on Render with secure API communication.",
+      },
+    ];
 
-  const stats = [
-    {
-      value: "99.99%",
-      label: "Secure Uptime",
-    },
-    {
-      value: "256-bit",
-      label: "Encrypted Security",
-    },
-    {
-      value: "1M+",
-      label: "Protected Users",
-    },
-  ];
+    const stats = [
+      {
+        value: "JWT",
+        label: "Token Security",
+      },
+      {
+        value: "OAuth2",
+        label: "Social Login",
+      },
+      {
+        value: "Spring Boot",
+        label: "Backend API",
+      },
+    ];
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
@@ -85,7 +86,7 @@ function HomeComponent() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-5 py-2 text-sm text-cyan-400 mb-8 backdrop-blur-xl">
               <Sparkles className="h-4 w-4" />
-              Future Ready Authentication Platform
+              Modern Full Stack Authentication System
             </div>
 
             <h1 className="text-6xl md:text-8xl font-black leading-none tracking-tight">
@@ -96,9 +97,9 @@ function HomeComponent() {
             </h1>
 
             <p className="mt-8 text-lg text-gray-600 dark:text-gray-400 max-w-xl leading-relaxed">
-              Create secure futuristic authentication experiences with
-              biometric verification, AI-powered protection, and ultra-fast
-              infrastructure.
+              Modern authentication system with JWT security, 
+              Google & GitHub OAuth login, protected routes, 
+              and secure session handling.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-5">
@@ -124,11 +125,11 @@ function HomeComponent() {
 
             <div className="mt-12 grid gap-4 sm:grid-cols-2">
               {[
-                "AI Threat Detection",
-                "OAuth & JWT Ready",
-                "Biometric Authentication",
-                "Role Based Access",
-              ].map((item, index) => (
+                  "JWT Authentication",
+                  "Google & GitHub OAuth",
+                  "Role Based Access",
+                  "Protected Routes",
+                ].map((item, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-3 text-gray-700 dark:text-gray-300"
@@ -304,15 +305,16 @@ function HomeComponent() {
             </div>
 
             <h2 className="text-5xl md:text-7xl font-black leading-tight">
-              BUILD THE FUTURE
+              SECURE FULL STACK 
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500 mt-3">
-                OF AUTHENTICATION
+                AUTH PLATFORM
               </span>
             </h2>
 
             <p className="mt-8 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-              Launch powerful authentication systems with futuristic security,
-              biometric access, and AI-driven protection.
+              Built using React, Spring Boot, 
+              JWT authentication, OAuth2 login, 
+              and secure API communication for modern web applications.
             </p>
 
             <div className="mt-10 flex justify-center gap-5 flex-wrap">

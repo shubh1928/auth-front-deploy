@@ -1,6 +1,5 @@
 import { useState } from "react";
 import {
-  ShieldCheck,
   Users,
   Activity,
   Globe,
@@ -8,6 +7,7 @@ import {
   Cpu,
   Sparkles,
   ArrowUpRight,
+  Shield,
 } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
@@ -40,36 +40,36 @@ try {
 
   const stats = [
     {
-      title: "Total Users",
-      value: "12,450",
-      growth: "+12%",
-      icon: <Users className="h-7 w-7 text-cyan-400" />,
+      title: "JWT Security",
+      value: "Access + Refresh",
+      change: "Secure token authentication",
+      icon: Shield,
     },
     {
-      title: "Active Sessions",
-      value: "2,134",
-      growth: "+8%",
-      icon: <Activity className="h-7 w-7 text-violet-400" />,
+      title: "OAuth Login",
+      value: "Google / GitHub",
+      change: "Social authentication enabled",
+      icon: Activity,
     },
     {
-      title: "Security Score",
-      value: "98%",
-      growth: "+4%",
-      icon: <ShieldCheck className="h-7 w-7 text-emerald-400" />,
+      title: "User Roles",
+      value: "ADMIN / GUEST",
+      change: "Role based access control",
+      icon: Users,
     },
     {
-      title: "Global Reach",
-      value: "84 Countries",
-      growth: "+18%",
-      icon: <Globe className="h-7 w-7 text-pink-400" />,
+      title: "Deployment",
+      value: "Vercel + Render",
+      change: "Frontend & backend hosted",
+      icon: Globe,
     },
   ];
 
   const activities = [
-    "New user registered successfully",
-    "Biometric login enabled",
-    "Security scan completed",
-    "AI monitoring system updated",
+    "User logged in successfully",
+    "JWT token generated",
+    "OAuth login successful",
+    "Refresh token validated",
   ];
 
   return (
@@ -102,7 +102,7 @@ try {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-400 mb-5">
               <Sparkles className="h-4 w-4" />
-              AI Powered Dashboard
+              Authentication Dashboard
             </div>
 
             <h1 className="text-5xl font-black leading-tight">
@@ -113,8 +113,7 @@ try {
             </h1>
 
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-              Monitor authentication activities, security analytics, and
-              futuristic platform statistics in real time.
+              Monitor user authentication, active sessions, and secure access management.
             </p>
           </div>
 
@@ -163,13 +162,13 @@ try {
                   </div>
 
                   <div className="rounded-2xl bg-black/5 dark:bg-white/5 p-4 border border-black/10 dark:border-white/10">
-                    {stat.icon}
+                    {<stat.icon className="h-8 w-8 text-cyan-400" />}
                   </div>
                 </div>
 
                 <div className="mt-8 flex items-center gap-2 text-emerald-400 text-sm font-medium">
                   <TrendingUp className="h-4 w-4" />
-                  {stat.growth} this month
+                  {stat.change}
                 </div>
               </CardContent>
             </Card>
@@ -197,7 +196,7 @@ try {
                   </h2>
 
                   <p className="text-gray-600 dark:text-gray-400 mt-2">
-                    Real-time authentication security analytics.
+                    JWT based authentication workflow and protected route management.
                   </p>
                 </div>
 

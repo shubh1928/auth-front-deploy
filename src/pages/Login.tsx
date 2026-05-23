@@ -260,12 +260,12 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
               </div>
             </div>
 
-            {/* Forgot Password */}
-            <div className="flex justify-end">
+            {/* Forgot Password - feature coming soon */}
+            {/* <div className="flex justify-end">
               <button className="text-sm text-cyan-400 hover:text-cyan-300 transition">
                 Forgot Password?
               </button>
-            </div>
+            </div> */}
 
             {/* Login Button */}
             <Button disabled={loading}
