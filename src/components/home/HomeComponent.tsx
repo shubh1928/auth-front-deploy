@@ -102,7 +102,7 @@ function HomeComponent() {
               and secure session handling.
             </p>
 
-            <div className="mt-10 flex flex-wrap gap-5">
+            {/* <div className="mt-10 flex flex-wrap gap-5">
               <Button className="rounded-full bg-cyan-400 hover:bg-cyan-300 text-black px-8 py-7 text-base font-bold shadow-[0_0_40px_rgba(34,211,238,0.4)]">
                 Launch Platform
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -121,7 +121,7 @@ function HomeComponent() {
               >
                 Explore Features
               </Button>
-            </div>
+            </div> */}
 
             <div className="mt-12 grid gap-4 sm:grid-cols-2">
               {[
@@ -234,7 +234,7 @@ function HomeComponent() {
       {/* Features */}
       <section
         id="features"
-        className="relative z-10 container mx-auto px-6 py-24"
+        className="relative z-10 container mx-auto px-6 py-2"
       >
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-5xl md:text-6xl font-black leading-tight">
@@ -317,7 +317,7 @@ function HomeComponent() {
               and secure API communication for modern web applications.
             </p>
 
-            <div className="mt-10 flex justify-center gap-5 flex-wrap">
+            {/* <div className="mt-10 flex justify-center gap-5 flex-wrap">
               <Button className="rounded-full bg-cyan-400 hover:bg-cyan-300 text-black px-10 py-7 text-base font-bold shadow-[0_0_40px_rgba(34,211,238,0.4)]">
                 Start Building
               </Button>
@@ -334,7 +334,7 @@ function HomeComponent() {
               >
                 Explore Docs
               </Button>
-            </div>
+            </div> */}
           </CardContent>
         </Card>
       </section>
