@@ -20,6 +20,7 @@ import type User from "@/models/User";
 function Userhome() {
 
   const user = useAuth((state) => state.user);
+  const isAdmin = user?.role === "ADMIN" || user?.role === "ROLE_ADMIN";
   const [user1, setUser1] = useState<User | null>(null)
 
 const getUserData = async () => {
@@ -107,7 +108,7 @@ try {
             <h1 className="text-5xl font-black leading-tight">
               Welcome Back,
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">
-                Shubham 👋
+                    {user?.name?.split(" ")[0]} 👋
               </span>
             </h1>
 
@@ -117,9 +118,16 @@ try {
             </p>
           </div>
 
-          <Button onClick={getUserData} className="rounded-2xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold h-14 px-8 shadow-[0_0_40px_rgba(34,211,238,0.35)]">
-            Get Current User
-          </Button>
+            {
+              isAdmin && (
+                <Button
+                  onClick={getUserData}
+                  className="rounded-2xl bg-cyan-400 hover:bg-cyan-300 text-black font-bold h-14 px-8 shadow-[0_0_40px_rgba(34,211,238,0.35)]"
+                >
+                  Get Current User
+                </Button>
+              )
+            }
           <p>
             {user1?.name}
           </p>

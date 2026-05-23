@@ -1,26 +1,26 @@
-import { useState } from "react";
-
 import {
   Mail,
   ShieldCheck,
   Calendar,
-  Pencil,
-  Save,
+  // Pencil,
+  // Save,
   User2,
-  Camera,
+  // Camera,
   CheckCircle2,
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+// import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import useAuth from "@/auth/store";
+import { useNavigate } from "react-router";
 
 function UserProfile() {
 
-const [isEditing, setIsEditing] = useState(false);
+// const [isEditing, setIsEditing] = useState(false);
 const user = useAuth(state => state.user);
+const navigate = useNavigate();
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
@@ -45,14 +45,36 @@ const user = useAuth(state => state.user);
       />
 
       <div className="relative z-10 container mx-auto px-6 py-14">
+
+
         
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-400 mb-5">
-              <ShieldCheck className="h-4 w-4" />
-              Secure User Profile
-            </div>
+{/* Header */}
+<div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+
+  <div>
+
+    <div className="flex items-center gap-4 mb-5">
+
+      <Button
+        onClick={() => navigate(-1)}
+        variant="outline"
+        className="
+          rounded-xl
+          border-cyan-400/20
+          text-cyan-400
+          hover:bg-cyan-400
+          hover:text-black
+        "
+      >
+        ← Back
+      </Button>
+
+      <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-400">
+        <ShieldCheck className="h-4 w-4" />
+        Secure User Profile
+      </div>
+
+    </div>
 
             <h1 className="text-5xl font-black">
               User Profile
@@ -64,7 +86,7 @@ const user = useAuth(state => state.user);
             </p>
           </div>
 
-          <Button
+          {/* <Button
             onClick={() => setIsEditing(!isEditing)}
             className="
               rounded-2xl
@@ -88,7 +110,7 @@ const user = useAuth(state => state.user);
                 Edit Profile
               </>
             )}
-          </Button>
+          </Button> */}
         </div>
 
         {/* Main Grid */}
@@ -109,17 +131,33 @@ const user = useAuth(state => state.user);
               {/* Profile Image */}
               <div className="flex flex-col items-center">
                 <div className="relative">
-                  <img
-                    src={user?.image}
-                    alt="profile"
-                    className="
-                      h-40 w-40 rounded-full object-cover
-                      border-4 border-cyan-400/30
-                      shadow-[0_0_40px_rgba(34,211,238,0.35)]
-                    "
-                  />
+                  
+                  {/* made changes here to fix the profile image not showing issue. */}
+                  {user?.image ? (
+                    <img
+                      src={user.image}
+                      alt="profile"
+                      className="
+                        h-40 w-40 rounded-full object-cover
+                        border-4 border-cyan-400/30
+                        shadow-[0_0_40px_rgba(34,211,238,0.35)]
+                      "
+                    />
+                  ) : (
+                    <div
+                      className="
+                        h-40 w-40 rounded-full
+                        border-4 border-cyan-400/30
+                        shadow-[0_0_40px_rgba(34,211,238,0.35)]
+                        flex items-center justify-center
+                        bg-black/20
+                      "
+                    >
+                      <User2 className="h-16 w-16 text-cyan-400" />
+                    </div>
+                  )}
 
-                  {isEditing && (
+                  {/* {isEditing && (
                     <button
                       className="
                         absolute bottom-2 right-2
@@ -131,7 +169,7 @@ const user = useAuth(state => state.user);
                     >
                       <Camera className="h-5 w-5" />
                     </button>
-                  )}
+                  )} */}
                 </div>
 
                 <h2 className="mt-6 text-3xl font-black">
@@ -238,7 +276,7 @@ const user = useAuth(state => state.user);
                     Full Name
                   </label>
 
-                  {isEditing ? (
+                  {/* {isEditing ? (
                     <Input
                       name="name"
                       value={user?.name}
@@ -249,7 +287,7 @@ const user = useAuth(state => state.user);
                         bg-black/5 dark:bg-white/5
                       "
                     />
-                  ) : (
+                  ) : ( */}
                     <div
                       className="
                         h-14 rounded-2xl
@@ -260,7 +298,7 @@ const user = useAuth(state => state.user);
                     >
                       {user?.name}
                     </div>
-                  )}
+                  {/* )} */}
                 </div>
 
                 {/* Email */}
@@ -269,7 +307,7 @@ const user = useAuth(state => state.user);
                     Email Address
                   </label>
 
-                  {isEditing ? (
+                  {/* {isEditing ? (
                     <Input
                       name="email"
                       value={user?.email}
@@ -280,7 +318,7 @@ const user = useAuth(state => state.user);
                         bg-black/5 dark:bg-white/5
                       "
                     />
-                  ) : (
+                  ) : ( */}
                     <div
                       className="
                         h-14 rounded-2xl
@@ -292,7 +330,7 @@ const user = useAuth(state => state.user);
                       <Mail className="h-5 w-5 text-cyan-400 mr-3" />
                       {user?.email}
                     </div>
-                  )}
+                  {/* )} */}
                 </div>
 
                 {/* User ID */}
@@ -371,7 +409,7 @@ const user = useAuth(state => state.user);
               </div>
 
               {/* Bottom Save Button */}
-              {isEditing && (
+              {/* {isEditing && (
                 <div className="flex justify-end mt-10">
                   <Button
                     className="
@@ -388,7 +426,7 @@ const user = useAuth(state => state.user);
                     Save Changes
                   </Button>
                 </div>
-              )}
+              )} */}
             </CardContent>
           </Card>
         </div>

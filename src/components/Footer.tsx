@@ -2,11 +2,11 @@ function Footer() {
   return (
     <footer className="relative z-10 border-t border-black/10 dark:border-white/10 bg-white/40 dark:bg-black/30 backdrop-blur-2xl">
       
-      <div className="container mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="container mx-auto px-6 py-1 flex flex-col md:flex-row items-center justify-between gap-2">
         
         {/* Logo */}
         <div className="flex flex-col items-center md:items-start">
-          <h2 className="text-2xl font-black tracking-wider">
+          <h2 className="text-xl font-black tracking-wider">
             AUTH<span className="text-cyan-400">APP</span>
           </h2>
 
