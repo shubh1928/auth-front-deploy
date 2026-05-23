@@ -162,11 +162,11 @@ try {
                   </div>
 
                   <div className="rounded-2xl bg-black/5 dark:bg-white/5 p-4 border border-black/10 dark:border-white/10">
-                    {<stat.icon className="h-8 w-8 text-cyan-400" />}
+                    <stat.icon className="h-8 w-8 text-cyan-400" />
                   </div>
                 </div>
 
-                <div className="mt-8 flex items-center gap-2 text-emerald-400 text-sm font-medium">
+                <div className="mt-8 flex items-center gap-2 text-cyan-400 text-sm font-medium">
                   <TrendingUp className="h-4 w-4" />
                   {stat.change}
                 </div>
