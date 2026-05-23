@@ -81,8 +81,8 @@ const navigate = useNavigate();
             </h1>
 
             <p className="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-              Manage and update your futuristic authentication profile
-              and account information.
+              View your authentication account details, provider information,
+              and secure profile data.
             </p>
           </div>
 
@@ -131,7 +131,7 @@ const navigate = useNavigate();
               {/* Profile Image */}
               <div className="flex flex-col items-center">
                 <div className="relative">
-                  
+
                   {/* made changes here to fix the profile image not showing issue. */}
                   {user?.image ? (
                     <img
@@ -211,11 +211,11 @@ const navigate = useNavigate();
                   "
                 >
                   <p className="text-cyan-400 text-2xl font-black">
-                    28
+                    OAuth2
                   </p>
 
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    Logins
+                    Enabled
                   </p>
                 </div>
 
@@ -228,11 +228,11 @@ const navigate = useNavigate();
                   "
                 >
                   <p className="text-violet-400 text-2xl font-black">
-                    99%
+                    JWT
                   </p>
 
                   <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
-                    Security
+                    Secured
                   </p>
                 </div>
               </div>
@@ -258,7 +258,7 @@ const navigate = useNavigate();
                   </h2>
 
                   <p className="text-gray-600 dark:text-gray-400 mt-2">
-                    View and manage your account details.
+                    View your registered account and authentication details.
                   </p>
                 </div>
 
@@ -384,7 +384,15 @@ const navigate = useNavigate();
                     "
                   >
                     <Calendar className="h-5 w-5 text-cyan-400 mr-3" />
-                    {user?.createdAt}
+                    {user?.createdAt
+                      ? new Date(user.createdAt).toLocaleString("en-IN", {
+                          day: "2-digit",
+                          month: "short",
+                          year: "numeric",
+                          hour: "2-digit",
+                          minute: "2-digit",
+                        })
+                      : "N/A"}
                   </div>
                 </div>
 
@@ -403,7 +411,15 @@ const navigate = useNavigate();
                     "
                   >
                     <CheckCircle2 className="h-5 w-5 text-emerald-400 mr-3" />
-                    {user?.updatedAt}
+                                        {user?.updatedAt
+                                          ? new Date(user.updatedAt).toLocaleString("en-IN", {
+                                              day: "2-digit",
+                                              month: "short",
+                                              year: "numeric",
+                                              hour: "2-digit",
+                                              minute: "2-digit",
+                                            })
+                                          : "N/A"}
                   </div>
                 </div>
               </div>
