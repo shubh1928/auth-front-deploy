@@ -6,6 +6,8 @@ import {
   LockKeyhole,
   ArrowRight,
   Sparkles,
+  Eye,
+  EyeOff,
   CheckCircle2Icon,
 } from "lucide-react";
 import type LoginData from "@/models/LoginData";
@@ -25,6 +27,9 @@ function Login() {
 
 const[loading, setLoading] = useState<boolean>(false);
 const[error, setError] = useState<any>(null);
+
+//for eye icon in password field
+const [showPassword, setShowPassword] = useState(false);
 
 const navigate = useNavigate();
 const login = useAuth((state) => state.login);
@@ -223,7 +228,7 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
                 <LockKeyhole className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-violet-400" />
 
                 <Input
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="Enter your password"
                   className="
                     h-14
@@ -239,6 +244,19 @@ const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
                   value={loginData.password}
                   onChange={handleInputChange}
                 />
+
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-cyan-400 transition"
+                >
+                  {showPassword ? (
+                    <EyeOff className="h-5 w-5" />
+                  ) : (
+                    <Eye className="h-5 w-5" />
+                  )}
+                </button>
+
               </div>
             </div>
 
