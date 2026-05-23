@@ -1,11 +1,9 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Shield,
   LockKeyhole,
   Fingerprint,
   Sparkles,
-  ArrowRight,
   Cpu,
   Globe,
   ScanFace,
